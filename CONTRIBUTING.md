@@ -81,7 +81,9 @@ chore(deps): update dependencies
 ## Testing
 
 Tests are written using [Vitest](https://vitest.dev/). You can run all the tests from the root of the repository.
+
 ```
 pnpm test
 ```
+
 Please ensure that the tests are passing when submitting a pull request. If you're adding new features, please include tests.
