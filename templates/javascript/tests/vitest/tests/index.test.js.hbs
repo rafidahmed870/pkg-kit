@@ -1,0 +1,4 @@
+import { describe, it, expect } from "vitest"; import { hello } from "../src/index.js";
+describe("hello", () => { it("returns a greeting string", () => {
+expect(hello("world")).toBe("Hello, world!"); }); it("uses the provided name", () => {
+expect(hello("{{package.name}}")).toContain("{{package.name}}"); }); });

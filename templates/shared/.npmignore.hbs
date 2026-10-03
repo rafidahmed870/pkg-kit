@@ -1,0 +1,4 @@
+src/ tests/ coverage/ *.log .DS_Store {{#if isTypeScript}} tsconfig.json {{else}} jsconfig.json
+{{/if}} tsup.config.{{#if isTypeScript}}ts{{else}}js{{/if}} {{#if isVitest}} vitest.config.{{#if
+isTypeScript}}ts{{else}}js{{/if}} {{else}} jest.config.{{#if isTypeScript}}ts{{else}}js{{/if}}
+{{/if}} prettier.config.js .oxlintrc.json

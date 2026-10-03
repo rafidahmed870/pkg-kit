@@ -1,0 +1,4 @@
+/** @type {import("jest").Config} */ export default { testEnvironment: "node", testMatch:
+["**/tests/**/*.test.js"], transform: { "^.+\\.js$": [ "babel-jest", { presets:
+[["@babel/preset-env", { targets: { node: "current" }, modules: false }]], }, ], },
+extensionsToTreatAsEsm: [], collectCoverageFrom: ["src/**/*.js"], };

@@ -1,0 +1,23 @@
+# Contributing to {{package.name}} Thanks for your interest in contributing. Please take a moment to
+review this document before submitting a pull request. --- ## Development Setup ### Clone the
+repository ```bash {{#if package.repository}} git clone {{package.repository}}.git {{else}} git
+clone
+<repo-url>
+  {{/if}} ``` ### Install dependencies ```bash {{commands.install}} ``` ### Run tests ```bash
+  {{commands.test}} ``` ### Build ```bash {{commands.build}} ``` --- ## Commit Messages We use
+  [Conventional Commits](https://www.conventionalcommits.org/). ### Format ```
+  <type
+    >(<scope
+      >):
+      <subject>
+        ``` ### Types - `feat` — New feature - `fix` — Bug fix - `docs` — Documentation changes -
+        `refactor` — Code refactor (no feature or fix) - `test` — Adding or updating tests - `chore`
+        — Maintenance, dependencies, configuration ### Examples ``` feat(core): add retry logic
+        fix(parser): handle empty input docs(readme): update usage examples test(core): add edge
+        case tests ``` --- ## Pull Requests 1. Fork the repository and create your branch from
+        `main`. 2. Make your changes. 3. Ensure tests pass: `{{commands.test}}` 4. Submit a pull
+        request.
+      </subject></scope
+    ></type
+  ></repo-url
+>

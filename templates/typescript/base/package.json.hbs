@@ -1,0 +1,15 @@
+{ "name": "{{package.name}}", "version": "{{package.version}}",{{#if package.description}}
+"description": "{{package.description}}",{{/if}} "type": "module", "main": "./dist/index.js",
+"module": "./dist/index.js", "types": "./dist/index.d.ts", "exports": { ".": { "types":
+"./dist/index.d.ts", "import": "./dist/index.js" } }, "files": [ "dist" ],{{#if package.repository}}
+"repository": { "type": "git", "url": "{{package.repository}}" },{{/if}}{{#if package.author}}
+"author": "{{package.author}}",{{/if}} "license": "{{package.license}}",{{#if
+package.keywords.length}} "keywords": [{{#each package.keywords}}"{{this}}"{{#unless @last}},
+{{/unless}}{{/each}}],{{/if}} "scripts": { "build": "tsup", "dev": "tsup --watch",{{#if isVitest}}
+"test": "vitest --run", "test:watch": "vitest", "test:coverage": "vitest --run --coverage",{{else}}
+"test": "jest", "test:watch": "jest --watch", "test:coverage": "jest --coverage",{{/if}} "lint":
+"oxlint .", "format": "prettier --write .", "format:check": "prettier --check .", "typecheck": "tsc
+--noEmit", "prepublishOnly": "pnpm build && pnpm test" }, "devDependencies": { "@types/node":
+"^20.0.0",{{#if isVitest}} "vitest": "^1.0.0",{{else}} "@types/jest": "^29.0.0", "jest": "^29.0.0",
+"ts-jest": "^29.0.0",{{/if}} "oxlint": "^0.15.0", "prettier": "^3.0.0", "tsup": "^8.0.0",
+"typescript": "^5.0.0" } }

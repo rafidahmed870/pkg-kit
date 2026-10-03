@@ -1,0 +1,5 @@
+# {{package.name}} {{#if package.description}} {{package.description}} {{/if}} ## Installation
+```bash {{commands.add}} {{package.name}} ``` ## Usage {{#if isTypeScript}} ```ts import { } from
+"{{package.name}}"; ``` {{else}} ```js import { } from "{{package.name}}"; ``` {{/if}} ##
+Development ```bash # Install dependencies {{commands.install}} # Run tests {{commands.test}} #
+Build {{commands.build}} ``` ## License {{package.license}}
