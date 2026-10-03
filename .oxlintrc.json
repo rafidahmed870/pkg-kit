@@ -1,0 +1,10 @@
+{
+  "rules": {
+    "no-unused-vars": "warn",
+    "no-console": "off",
+    "eqeqeq": "error",
+    "no-var": "error",
+    "prefer-const": "error"
+  },
+  "ignorePatterns": ["dist/**", "node_modules/**", "tests/fixtures/**"]
+}
