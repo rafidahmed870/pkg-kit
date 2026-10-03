@@ -17,10 +17,25 @@
     "create-pkg-kit": "./dist/cli/index.js"
   },
   "files": [
-    "dist",
-    "templates"
+    "dist"
+  ],
+  "keywords": [
+    "create",
+    "scaffold",
+    "npm-package",
+    "cli",
+    "typescript",
+    "javascript",
+    "template",
+    "vitest",
+    "jest",
+    "pnpm",
+    "starter"
   ],
   "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -39,7 +54,6 @@
     "minimist": "1.2.8"
   },
   "devDependencies": {
-    "@types/handlebars": "4.1.0",
     "@types/minimist": "1.2.5",
     "@types/node": "20.14.0",
     "oxlint": "0.15.0",
