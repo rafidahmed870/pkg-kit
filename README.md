@@ -110,13 +110,13 @@ npx create-pkg-kit my-package --flat
 
 **Flat mode defaults:**
 
-| Field        | Default                              |
-| ------------ | ------------------------------------ |
-| version      | `1.0.0`                              |
-| description  | _(empty)_                            |
-| entry point  | `src/index.ts` / `src/index.js`      |
-| test command | `<pm> test`                          |
-| license      | `MIT`                                |
+| Field        | Default                         |
+| ------------ | ------------------------------- |
+| version      | `1.0.0`                         |
+| description  | _(empty)_                       |
+| entry point  | `src/index.ts` / `src/index.js` |
+| test command | `<pm> test`                     |
+| license      | `MIT`                           |
 
 The package name is derived from the target directory name automatically.
 
@@ -191,12 +191,12 @@ Same structure with `jsconfig.json`, `jest.config.js`, and `src/index.js` instea
 create-pkg-kit [directory] [options]
 ```
 
-| Argument / Option  | Description                                             |
-| ------------------ | ------------------------------------------------------- |
-| `directory`        | Target directory. Use `.` for current dir.              |
-| `--flat`           | Skip optional metadata prompts, use defaults.           |
-| `--help`, `-h`     | Show help.                                              |
-| `--version`, `-v`  | Show the CLI version.                                   |
+| Argument / Option | Description                                   |
+| ----------------- | --------------------------------------------- |
+| `directory`       | Target directory. Use `.` for current dir.    |
+| `--flat`          | Skip optional metadata prompts, use defaults. |
+| `--help`, `-h`    | Show help.                                    |
+| `--version`, `-v` | Show the CLI version.                         |
 
 ---
 
