@@ -50,9 +50,13 @@ export async function ensureDir(dirPath: string): Promise<void> {
 /**
  * Writes content to a file, creating parent directories as needed.
  */
+export function normaliseLineEndings(content: string): string {
+  return content.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+}
+
 export async function writeFileSafe(filePath: string, content: string): Promise<void> {
   await ensureDir(dirname(filePath));
-  await writeFile(filePath, content, "utf-8");
+  await writeFile(filePath, normaliseLineEndings(content), "utf-8");
 }
 
 /**

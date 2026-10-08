@@ -8,6 +8,10 @@ export interface FileWriter {
   exists(filePath: string): Promise<boolean>;
 }
 
+export function normaliseLineEndings(content: string): string {
+  return content.replace(/\r\n/g, "\n").replace(/\r/g, "\n");
+}
+
 /**
  * Concrete file writer — writes rendered content to disk.
  * All writes are relative to a base output directory.
@@ -18,8 +22,9 @@ export class DiskFileWriter implements FileWriter {
   async write(relativePath: string, content: string): Promise<void> {
     const fullPath = join(this.baseDir, relativePath);
     const dir = dirname(fullPath);
+    const normalized = normaliseLineEndings(content);
     await mkdir(dir, { recursive: true });
-    await writeFile(fullPath, content, "utf-8");
+    await writeFile(fullPath, normalized, "utf-8");
   }
 
   async mkdir(relativePath: string): Promise<void> {
@@ -40,7 +45,7 @@ export class MemoryFileWriter implements FileWriter {
   public readonly files: Map<string, string> = new Map();
 
   async write(destination: string, content: string): Promise<void> {
-    this.files.set(destination, content);
+    this.files.set(destination, normaliseLineEndings(content));
   }
 
   async mkdir(_directory: string): Promise<void> {

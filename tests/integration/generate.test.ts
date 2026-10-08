@@ -70,6 +70,22 @@ describe.skipIf(!templatesExist)("generateProject (in-memory)", () => {
     expect(pkgJson).toContain('"1.0.0"');
   });
 
+  it("normalises CRLF output to LF before writing files", async () => {
+    const config = makeConfig("typescript", "pnpm", "vitest");
+    const writer = new MemoryFileWriter();
+    const renderer = {
+      async render(_templatePath: string, _context: unknown): Promise<string> {
+        return "first line\r\nsecond line\r\n";
+      },
+    };
+
+    const result = await generateProject({ config, writer, renderer });
+
+    expect(result.success).toBe(true);
+    expect(writer.files.get("README.md")).toBe("first line\nsecond line\n");
+    expect(writer.files.get("README.md")).not.toContain("\r");
+  });
+
   it("generates README containing the package name", async () => {
     const config = makeConfig("typescript", "yarn", "vitest");
     const writer = new MemoryFileWriter();
