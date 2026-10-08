@@ -1,6 +1,6 @@
 {
   "name": "create-pkg-kit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A production-ready CLI for scaffolding modern npm packages with configurable language, package manager, testing framework, and npm metadata.",
   "homepage": "https://github.com/rafidahmed870/pkg-kit#readme",
   "bugs": {
